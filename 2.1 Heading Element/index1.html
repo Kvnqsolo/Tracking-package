@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logan Express</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <style>
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: .75rem;
+    }
+  </style>
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            display: inline-block;
+        }
+        .container {
+            margin-top: 2rem;
+        }
+ /*       footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }*/
+        .service, .contact-form, .tracking-form {
+            margin-bottom: 2rem;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .landing-page {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url(tyring.jpg);
+            background-size: cover;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+        .tracking-result .movement-log {
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Logan Express</h1>
+        <p>FAST SAFE RELIABLE One-Stop Logistics Service Provider</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Logan Express</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#track">Track</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ship">Ship</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Track Section -->
+        <section id="track" class="landing-page">
+            <div class="container text-center">
+                <h1 class="display-4">Welcome to Logan Express</h1>
+                <p class="lead">Fast and Reliable Package Delivery</p>
+                <button onclick="showTrackingForm()" class="btn btn-primary btn-lg">Track Your Package</button>
+            </div>
+        </section>
+
+        <section id="trackingSection" class="container hidden">
+            <h1 class="mt-5 text-center">Track Your Package</h1>
+            <div class="form-group">
+                <label for="trackingNumber">Enter Tracking Number:</label>
+                <input type="text" id="trackingNumber" class="form-control" placeholder="Tracking Number">
+            </div>
+            <div class="form-group">
+                <button onclick="trackPackage()" class="btn btn-primary btn-block">Track Package</button>
+            </div>
+            <div class="tracking-result" id="trackingResult">
+                <!-- Tracking details will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Ship Section -->
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis">Move With Joy</h1>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4">At Logan Express, we pride ourselves on being your reliable partner for all your delivery needs. Whether you're sending a package across the city or around the world, we are here to ensure your shipments arrive safely and on time. Explore our services to find the perfect shipping solution for you. Track your packages effortlessly and enjoy peace of mind knowing that your deliveries are in good hands. Fast. Safe. Reliable. That's the Logan Express promise.</p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get a Quote</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Contact Us</button>
+              </div>
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+              <div class="container px-5">
+                <img src="./moving-van.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+              </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">Why move with us?</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                  <img src="./briefcase.svg" alt="briefcase" height="30">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Professional</h3>
+                <p>Our team of professional movers are trained to prioritize efficiency, organization, and attention to detail. We understand that your possessions are more than just objects - they are a reflection of your life, memories, and experiences. That's why we take extra care to ensure that everything is packed and transported with the utmost care and attention.</p>
+                <a href="#" class="icon-link">
+                  Get a Quote
+                  <img src="./chevron-right.svg" alt="chevron-right">
+                </a>
+              </div>
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                  <img src="./bus-front.svg" alt="bus-front" height="30">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Country wide</h3>
+                <p>We offer a range of services to suit your individual needs, whether you're moving locally or across the country. Our team can handle everything from packing and loading to unloading and unpacking, so you can focus on settling into your new home. And with our transparent pricing and no hidden fees, you can trust that you're getting a fair and competitive rate for our services.</p>
+                <a href="#" class="icon-link">
+                  Get a Quote
+                  <img src="./chevron-right.svg" alt="chevron-right">
+                </a>
+              </div>
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                  <img src="./chat-square-heart.svg" alt="chat-square-heart" height="30">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Personal Touch</h3>
+                <p>At our core, we believe that moving should be an exciting and positive experience, not a stressful one. By providing exceptional moving services in the World, we hope to revolutionize the way people think about moving and provide a better, more personalized experience for our customers. Contact us today to learn more about how we can help you with your next move.</p>
+                <a href="#" class="icon-link">
+                  Get a Quote
+                  <img src="./chevron-right.svg" alt="chevron-right">
+                </a>
+              </div>
+            </div>
+        </div>
+
+        <!-- carousel beuty -->
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./couple.jpg" class="d-block w-100" alt="couple" width="50%">
+                </div>
+                <div class="carousel-item">
+                  <img src="./dog.jpg" class="d-block w-100" alt="dog">
+                </div>
+                <div class="carousel-item">
+                  <img src="./family.jpg" class="d-block w-100" alt="family" >
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div>
+
+          <!-- Contact Section -->
+        <div class="container">
+            <footer class="py-5">
+              <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Company</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Servive Portfolio</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About us</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms and Conditions</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy policy</a></li>
+                  </ul>
+                </div>
+         
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Other Services</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Get a Quote</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Shedule a Pickup</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Klog Alpha</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Overseas Shipping</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Report Issues</a></li>
+                  </ul>
+                </div>
+         
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Section</h5>
+                   <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"></a></li>
+                  </ul>
+                </div>
+         
+                <div class="col-md-5 offset-md-1 mb-3">
+                  <form>
+                    <h5>Subscribe to our newsletter</h5>
+                    <p>Monthly digest of what's new and exciting from us.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                      <label for="newsletter1" class="visually-hidden">Email address</label>
+                      <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                      <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+         
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2024 Logan Express. All rights reserved.</p>
+              </div>
+            </footer>
+        </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        function showTrackingForm() {
+            document.getElementById('trackingSection').classList.remove('hidden');
+            document.getElementById('track').classList.add('hidden');
+        }
+
+        function trackPackage() {
+            const trackingNumber = document.getElementById('trackingNumber').value;
+            const trackingResult = document.getElementById('trackingResult');
+
+            // Simulating package tracking result
+            const trackingDetails = {
+                "1234567890": {
+                    status: "In Transit",
+                    location: "Customs",
+                    estimatedDelivery: "2024-07-10",
+                    additionalInfo: "Package contains $5,000 in cash with an autograph",
+                    movement: [
+                        { date: "2024-07-01", location: "Seoul, South Korea" },
+                        { date: "2024-07-02", location: "Incheon, South Korea" },
+                        { date: "2024-07-03", location: "Tokyo, Japan" },
+                        { date: "2024-07-04", location: "San Francisco, USA" },
+                        { date: "2024-07-05", location: "New York, USA" },
+                        { date: "2024-07-06", location: "Customs" }
+                    ]
+                }
+            };
+
+            if (trackingDetails[trackingNumber]) {
+                const details = trackingDetails[trackingNumber];
+                let movementLog = '';
+
+                details.movement.forEach(entry => {
+                    movementLog += `<div class="movement-log">
+                        <strong>Date:</strong> ${entry.date}<br>
+                        <strong>Location:</strong> ${entry.location}
+                    </div>`;
+                });
+
+                trackingResult.innerHTML = `
+                    <h2>Tracking Details</h2>
+                    <p><strong>Status:</strong> ${details.status}</p>
+                    <p><strong>Current Location:</strong> ${details.location}</p>
+                    <p><strong>Estimated Delivery:</strong> ${details.estimatedDelivery}</p>
+                    <p><strong>Additional Info:</strong> ${details.additionalInfo}</p>
+                    <h3>Movement Log</h3>
+                    ${movementLog}
+                `;
+            } else {
+                trackingResult.innerHTML = `
+                    <h2>Tracking Details</h2>
+                    <p>Tracking number not found. Please check the number and try again.</p>
+                `;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
